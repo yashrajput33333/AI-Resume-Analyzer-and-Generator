@@ -1,0 +1,28 @@
+{
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Yash",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config  src/index.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.9.0",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.1",
+    "multer": "^2.2.0",
+    "nodemon": "^3.1.14",
+    "pdf-parse": "^2.4.5",
+    "puppeteer": "^25.1.0",
+    "zod": "^3.24.4",
+    "zod-to-json-schema": "^3.24.6"
+  }
+}
