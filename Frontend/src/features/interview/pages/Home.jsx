@@ -24,7 +24,7 @@ const Home = () => {
         return (
             <main className='loading-screen'>
                 <div className='spinner'></div>
-                <h1>Loading your interview plan...</h1>
+                <h1>Loading, Please wait...</h1>
             </main>
         )
     }

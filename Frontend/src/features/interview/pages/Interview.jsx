@@ -76,7 +76,7 @@ const Interview = () => {
         return (
             <main className='loading-screen'>
                 <div className='spinner'></div>
-                <h1>Generating your interview plan...</h1>
+                <h1>Generating, Please wait...</h1>
             </main>
         )
     }
