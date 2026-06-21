@@ -30,9 +30,50 @@ $font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, s
     gap: 2rem;
 }
 
+// ── Loading Screen ────────────────────────────────────────────────────────────
+.loading-screen {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $bg-page;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    h1 {
+        color: $text-primary;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba($accent, 0.2);
+    border-top-color: $accent;
+    border-right-color: $accent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 // ── Page Header ──────────────────────────────────────────────────────────────
 .page-header {
-    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
 
     h1 {
         font-size: 2.25rem;
@@ -45,13 +86,32 @@ $font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, s
         color: $text-muted;
         font-size: 0.95rem;
         max-width: 480px;
-        margin: 0 auto;
+        margin: 0;
         line-height: 1.6;
     }
 
     .highlight {
         color: $accent;
     }
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.logout-button {
+    background-color: $accent;
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 120px;
 }
 
 // ── Main Card ─────────────────────────────────────────────────────────────────
@@ -301,7 +361,7 @@ $font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, s
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, $accent 0%, darken($accent, 10%) 100%);
+    background: linear-gradient(135deg, $accent 0%, color.adjust($accent, $lightness: -10%) 100%);
     color: #fff;
     font-size: 0.9rem;
     font-weight: 600;

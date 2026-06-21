@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router'
 import "../auth.form.scss"
 import { useAuth } from '../hooks/useAuth.js'
 
 const Login = () => {
 
-    const { loading, handleLogin } = useAuth()
+    const { user, loading, handleLogin } = useAuth()
     const navigate = useNavigate()
 
     const [email, setEmail] = useState("")
@@ -14,8 +14,14 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await handleLogin({ email, password })
-        navigate('/')
     }
+
+    // Navigate to home only when user is successfully set
+    useEffect(() => {
+        if (user && !loading) {
+            navigate('/')
+        }
+    }, [user, loading, navigate])
 
     if (loading) {
         return (<main><h1>Loading...</h1></main>)

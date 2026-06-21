@@ -15,11 +15,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/",
-        element: <Home />
+        element: <Protected><Home /></Protected>
     },
     {
         path: "/interview/:interviewId",
-        element: <Interview />
+        element: <Protected><Interview /></Protected>
     }
 ])
 
